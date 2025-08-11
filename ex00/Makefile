@@ -1,6 +1,6 @@
 NAME:=exec
 FLAGS:= -g -Wall -Werror -Wextra -std=c++98
-CC:= g++
+CC:= c++
 SRC:= main.cpp
 OBJ:=$(patsubst %.cpp, %.o, $(SRC))
 
