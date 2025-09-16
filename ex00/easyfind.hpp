@@ -25,7 +25,7 @@ void send_msg(int n)
 
 template <class T> void easyfind(T &arr, int n)
 {
-    for (t T::iterator i = arr.begin() ; i != arr.end(); i++)
+    for (typename T::iterator i = arr.begin() ; i != arr.end(); i++)
     {
         if (*i == n)
             return (send_msg(n), (void)0);

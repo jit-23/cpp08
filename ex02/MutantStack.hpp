@@ -21,7 +21,7 @@
 #define PURPLE "\033[38;5;5m"
 #define ORANGE "\033[38;5;208m"
 
-templante <typename T, typename _type = std::deque<T> >
+template <typename T, typename _type = std::deque<T>>
 class MutantStack
 {
 private:
@@ -31,32 +31,66 @@ public:
     MutantStack(unsigned int _size);
     MutantStack(const MutantStack &other);
     MutantStack &operator=(const MutantStack &other);
-    
+    // std::vector<int>::const_iterator it;
+
+
+    typedef _type<T>::iterator _begin(); 
+    typedef _type<T>::iterator _end(); 
+
     void push(T element);
     void pop();
-    unsigned int size();    
+    unsigned int GetSize();    
     bool empty();
+
     ~MutantStack();
 };
 
-void MutantStack::push(T element) {stck.push_back(T element);}
-void MutantStack::pop() {stck.pop_back();}
-bool MutantStack::empty() {stck.empty();}
-unsigned int  MutantStack::GetSize() {stck.size(T element);}
 
-MutantStack::MutantStack(unsigned int _size) : size(_size)
+
+/* class Foo {
+
+  std::vector<int>::iterator begin() { return data.begin(); }
+  std::vector<int>::iterator end() { return data.end(); }
+
+  std::vector<int>::const_iterator begin() const { return data.begin(); }
+  std::vector<int>::const_iterator end() const { return data.end(); }
+private:
+  std::vector<int> data
+}; */
+/* template <typename T, typename _type>
+_type<T>::const_iterator MutantStack<T,_type>::begin()
+{
+} */
+
+
+
+template <typename T, typename _type>
+void MutantStack<T,_type>::push(T element) {stck.push_back(T element);}
+
+template <typename T, typename _type>
+void MutantStack<T,_type>::pop() {stck.pop_back();}
+
+template <typename T, typename _type>
+bool MutantStack<T,_type>::empty() {stck.empty();}
+
+template <typename T, typename _type>
+unsigned int MutantStack<T,_type>::GetSize() {stck.size(T element);}
+
+template <typename T, typename _type>
+unsigned int MutantStack<T,_type>::GetSize() {return this->size;}
+
+template <typename T, typename _type>
+void MutantStack<T,_type>::pop() {stck.pop();}
+
+
+template <typename T, typename _type>
+MutantStack<T,_type>::MutantStack(unsigned int _size) : size(_size)
 {
     std::cout << "MutantStack constructor called" << std::endl;
 }
 
-
-
-unsigned int MutantStack::GetSize() {return this->size;}
-void MutantStack::pop() {stck.pop();}
-bool MutantStack::empty {return stck.empty();}
-
-
-MutantStack::MutantStack(const MutantStack  &other)
+template <typename T, typename _type>
+MutantStack<T,_type>::MutantStack(const MutantStack  &other)
 {
     std::cout << "MutantStack copy constructor called" << std::endl;
     if (this != *other)
@@ -69,7 +103,8 @@ MutantStack::MutantStack(const MutantStack  &other)
     }
 }
 
-MutantStack& MutantStack::operator=(const MutantStack  &other)  
+template <typename T, typename _type>
+MutantStack<T,_type>& MutantStack<T,_type>::operator=(const MutantStack  &other)  
 {
     std::cout << "MutantStack signing operator called" << std::endl;
     if (this != *other)
@@ -83,9 +118,8 @@ MutantStack& MutantStack::operator=(const MutantStack  &other)
     return *this;
 }
 
-
-
-MutantStack::~MutantStack()
+template <typename T, typename _type>
+MutantStack<T,_type>::~MutantStack()
 {
     std::cout << "MutantStack destructor called" << std::endl;
 

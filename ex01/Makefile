@@ -1,7 +1,7 @@
 NAME:=exec
 FLAGS:= -g -Wall -Werror -Wextra -std=c++98
 CC:= g++
-SRC:= main.cpp
+SRC:= main.cpp Span.cpp
 OBJ:=$(patsubst %.cpp, %.o, $(SRC))
 
 all: ${NAME}
