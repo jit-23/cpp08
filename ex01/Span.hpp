@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <array>
 #include <algorithm>
 #define RED "\033[31m"
 #define GREEN "\033[32m"

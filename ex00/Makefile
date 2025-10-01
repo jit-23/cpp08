@@ -1,13 +1,13 @@
 NAME:=exec
-FLAGS:= -g -Wall -Werror -Wextra -std=c++98
-CC:= c++
+CXXFLAGS:= -g -Wall -Werror -Wextra -std=c++98
+CXX:= c++
 SRC:= main.cpp
 OBJ:=$(patsubst %.cpp, %.o, $(SRC))
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} ${OBJ} ${FLAGS} -o ${NAME} 
+	${CXX} ${OBJ} ${CXXFLAGS} -o ${NAME} 
 
 clean:
 	rm -f ${OBJ}

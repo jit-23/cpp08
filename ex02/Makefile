@@ -1,13 +1,13 @@
 NAME=exec
-CFLAGS= -std=c++98 -Wall -Werror -Wextra -g
-SRC=main.cpp Span.cpp
-CC=c++
+CXXFLAGS= -std=c++98 -g  -Wall -Werror -Wextra
+SRC=main.cpp #MutantStack.tpp
+CXX=c++
 OBJ:=$(patsubst %.cpp, %.o, $(SRC))
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	${CXX} ${CXXFLAGS} ${OBJ} -o ${NAME}
 clean:
 	rm -f ${OBJ}
 fclean:	clean

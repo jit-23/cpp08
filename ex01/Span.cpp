@@ -18,7 +18,7 @@ Span::Span(const Span& other)  : size(other.size), filled_index(0)
         for (std::vector <int>::const_iterator other_it = other.getPtr().begin(); other_it != other.getPtr().end(); other_it++)
         {
             this->nbrs.push_back(*other_it);
-            if (filled_index >= other.size)
+            if (filled_index >= (int)other.size)
             {
                 throw std::runtime_error("the limit of the vector was reached!");
             }
@@ -38,7 +38,7 @@ Span& Span::operator=(const Span& other)
         for (std::vector <int>::const_iterator other_it = other.getPtr().begin(); other_it != other.getPtr().end(); other_it++)
         {
             this->nbrs.push_back(*other_it);
-            if (filled_index >= other.size)
+            if (filled_index >= (int)other.size)
             {
                 throw std::runtime_error("the limit of the vector was reached!");
             }
@@ -51,7 +51,7 @@ Span& Span::operator=(const Span& other)
 
 void Span::addNumber(int nbr)
 {
-    if (this->filled_index >= this->size)
+    if (this->filled_index >= (int)this->size)
         throw std::runtime_error("arr is filled to the max");
     int i = -1;
     while(++i < this->filled_index);

@@ -20,7 +20,7 @@
 
 void send_msg(int n)
 {
-    std::cout << "Number '" << n <<"' finded in the container!"<< std::endl;
+    std::cout <<BLUE<< "Number '" << n <<"' finded in the container!"<<END<< std::endl;
 }
 
 template <class T> void easyfind(T &arr, int n)

@@ -19,7 +19,7 @@
         }
     for (std::vector<int>::iterator it = a.getPtr().begin(); it != a.getPtr().end(); it++)
     {
-        std::cout << YELLOW << "element of vector: " << BLUE << *it << END << std::endl;
+        std::cout << YELLOW << "element of   vector: " << BLUE << *it << END << std::endl;
     }
     return 0;
 } */
@@ -37,9 +37,12 @@ int main()
         std::cout << GREEN << "*********************" << std::endl;
         std::cout <<          "* Span (a) elements *" << std::endl;
         std::cout <<          "*********************" << END << std::endl;
-
+       // a.addNumber(42); // out of limit
         for (std::vector<int>::const_iterator it = a.getPtr().begin(); it != a.getPtr().end(); it++)
             std::cout<< YELLOW << "elements of class A: " << *it << std::endl;
+        std::cout << a.shortestSpan() << std::endl;
+        std::cout << a.longestSpan() << std::endl;
+
     }
     catch(const std::exception& e)
     {
@@ -55,6 +58,8 @@ int main()
        std::cout <<              "*********************" << END << std::endl;    
        for (std::vector<int>::const_iterator it = a.getPtr().begin(); it != a.getPtr().end(); it++)
            std::cout<< YELLOW << "elements of class B: " << *it << std::endl;
+        std::cout << b.shortestSpan() << std::endl;
+        std::cout << b.longestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {
